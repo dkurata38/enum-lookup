@@ -1,6 +1,6 @@
 package com.github.dkurata38.enum_lookup_java.after;
 
-public enum RegistrationStatus implements EnumReverseLookupable {
+public enum RegistrationStatus {
     TEMPORARY("0"), REGULAR("1");
 
     private String code;
@@ -14,7 +14,6 @@ public enum RegistrationStatus implements EnumReverseLookupable {
     }
 
     // 呼び出し側は, InterfaceのstaticメソッドをCallするだけ. 引数にEnumの検索条件を無名関数で指定.
-    public static RegistrationStatus getByCode(String value) {
-        return EnumReverseLookupable.getByCondition(RegistrationStatus.class, (RegistrationStatus e) -> e.code.equals(value));
-    }
+    public static final EnumLookup<RegistrationStatus> byCode =
+            new EnumLookup<RegistrationStatus>(RegistrationStatus.class, RegistrationStatus::getCode);
 }
