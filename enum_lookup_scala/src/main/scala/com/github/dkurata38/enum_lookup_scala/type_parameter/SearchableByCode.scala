@@ -1,4 +1,4 @@
-package com.github.dkurata38.enum_lookup_scala
+package com.github.dkurata38.enum_lookup_scala.type_parameter
 
 abstract class ConstantSearchableByCode[E <: EnumConstant](val code: String) extends EnumConstant
 

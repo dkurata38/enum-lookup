@@ -1,4 +1,4 @@
-package com.github.dkurata38.enum_lookup_scala
+package com.github.dkurata38.enum_lookup_scala.type_parameter
 
 sealed class RegistrationStatus(code: String) extends ConstantSearchableByCode[RegistrationStatus](code)
 
