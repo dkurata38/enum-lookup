@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.function.Function;
 
-class EnumLookup<E extends Enum<E>> {
+class EnumLookup<E extends Enum<E> & EnumLookupable> {
     private final Class<E> enumClass;
     private final Function<E, String> getter;
 
